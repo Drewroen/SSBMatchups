@@ -1,0 +1,17 @@
+<div *ngIf="atInitial()">
+  <button (click)="goToMultipleCharacter()">Rank some matchups</button>
+  <button (click)="goToStats()">Stats</button>
+</div>
+<div *ngIf="atMultipleCharacter()">
+    <app-multiple-character (selectedCharacter)="onSelectedCharacter($event)">
+
+    </app-multiple-character>
+</div>
+<div *ngIf="atSingleCharacter()">
+  <app-single-character [character]="selectedCharacter">
+
+  </app-single-character>
+</div>
+<div *ngIf="atStats()">
+  Not done yet
+</div>
